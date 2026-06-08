@@ -18,20 +18,61 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
   
   <!-- Custom Styles -->
   <link rel="stylesheet" href="index.css">
 </head>
 <body>
+  <!-- Background Canvas for Interactive Particles & Matrix Effect -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- Main Content -->
   <main class="wrapper">
     <section class="content">
       <h1 class="name">Fabricio Puliafico Artur</h1>
       <p class="role">Pre-Sales &amp; Solutions Engineer | Solutions Architect | Agentic AI</p>
       <p class="specialties">Cloud &amp; Edge Platforms · Distributed &amp; Real-Time Systems · Secure Connectivity · AI-Ready Solutions</p>
       <p class="italic">Building applied AI &amp; systems experiments</p>
-      <a href="https://www.linkedin.com/in/fartur/" target="_blank" rel="noopener noreferrer" class="btn">Connect on LinkedIn</a>
+      
+      <!-- Connect Buttons -->
+      <div class="btn-group">
+        <a href="https://github.com/fabricioartur" target="_blank" rel="noopener noreferrer" class="btn">GitHub</a>
+        <a href="https://www.linkedin.com/in/fartur/" target="_blank" rel="noopener noreferrer" class="btn">Connect on LinkedIn</a>
+      </div>
     </section>
+
+    <!-- Discretely Floating Terminal Activator -->
+    <footer class="footer">
+      <button id="terminal-trigger" class="terminal-trigger-btn" aria-label="Open Terminal Emulator" title="Press 't' or '~' key to open">
+        <span class="terminal-icon">&gt;_</span> terminal
+      </button>
+    </footer>
   </main>
+
+  <!-- Interactive Terminal Overlay Modal -->
+  <div id="terminal-overlay" class="terminal-overlay" hidden>
+    <div class="terminal-card">
+      <div class="terminal-bar">
+        <div class="terminal-dots">
+          <span class="terminal-dot red" id="terminal-dot-close" title="Close"></span>
+          <span class="terminal-dot yellow"></span>
+          <span class="terminal-dot green"></span>
+        </div>
+        <span class="terminal-title">fabricioartur@terminal:~</span>
+        <button id="terminal-close" class="terminal-close-btn" aria-label="Close Terminal">&times;</button>
+      </div>
+      <div class="terminal-body">
+        <div id="terminal-output" class="terminal-output"></div>
+        <div class="terminal-input-line">
+          <span class="terminal-prompt">fabricioartur@terminal:~$</span>
+          <input type="text" id="terminal-input" class="terminal-input" autocomplete="off" spellcheck="false" aria-label="Terminal Input">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Interactive Script Logic -->
+  <script src="app.js"></script>
 </body>
 </html>
